@@ -1,227 +1,242 @@
 <!DOCTYPE html>
-<!--
-	Rocket Internet by TEMPLATE STOCK
-	templatestock.co @templatestock
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html lang="pt-br">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>L.C. - Portfolio</title>
+  <meta charset="utf-8">
+  <title>L.C. - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900,300" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <!-- Animation CSS -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
 
-	<!-- Google Font -->
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-	<!-- Font CSS -->
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    body, html {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: 'Lato', sans-serif;
+    }
 
-	<!-- Animation CSS -->
-	<link rel="stylesheet" href="css/animate.css">
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-	<!-- Custom CSS -->
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    #homeFullScreen {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-	<style>
-		* {
-			box-sizing: border-box;
-		}
-		body {
-			margin: 0;
-			font-family: 'Lato', sans-serif;
-		}
-		.animated-section {
-			animation-duration: 1.5s;
-			animation-fill-mode: both;
-		}
-		.fadeInUpCustom {
-			animation-name: fadeInUp;
-		}
-		.fadeInLeftCustom {
-			animation-name: fadeInLeft;
-		}
-		.fadeInRightCustom {
-			animation-name: fadeInRight;
-		}
-		html, body {
-			scroll-behavior: smooth;
-		}
-		section {
-			position: relative;
-			overflow: hidden;
-		}
-		.scroll-fade {
-			opacity: 0;
-			transform: translateY(30px);
-			transition: opacity 1s ease-out, transform 1s ease-out;
-		}
-		.scroll-fade.in-view {
-			opacity: 1;
-			transform: none;
-		}
-		img {
-			max-width: 100%;
-			height: auto;
-		}
-		@media screen and (max-width: 768px) {
-			h1.heading {
-				font-size: 1.8rem;
-				text-align: center;
-			}
-			.feature-box, .call-top-action p, .call-top-action span {
-				text-align: center;
-			}
-			.vertical-line {
-				display: none;
-			}
-			.header-text h1 {
-				font-size: 2rem;
-			}
-			.header-text p {
-				font-size: 1rem;
-			}
-			footer ul {
-				padding-left: 0;
-				text-align: center;
-			}
-			footer ul li {
-				display: inline-block;
-				margin: 0 10px;
-			}
-		}
-	</style>
+    .animated-section {
+      animation-duration: 1.5s;
+      animation-fill-mode: both;
+    }
+
+    .fadeInUpCustom {
+      animation-name: fadeInUp;
+    }
+
+    .fadeInLeftCustom {
+      animation-name: fadeInLeft;
+    }
+
+    .fadeInRightCustom {
+      animation-name: fadeInRight;
+    }
+
+    section {
+      position: relative;
+      overflow: hidden;
+      padding: 60px 0;
+    }
+
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .scroll-fade.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    footer ul.in-line {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px 0;
+    }
+
+    footer ul.in-line li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 767px) {
+      h1.heading, h1.ferraments {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .feature-box h1 {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+
+      .feature-box p {
+        text-align: center;
+      }
+
+      .header-text h1 {
+        font-size: 2rem;
+      }
+
+      .header-text p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-	<div id="homeFullScreen">
-		<div class="header-text wow fadeInDown animated-section">
-			<h1>Leonardo Costt</h1>
-			<div class="vertical-line"></div>
-			<p>
-				Educação Profissionalizante | Informática | Design Gráfico | Tecnologias Aplicadas
-				<br />
-				...
-			</p>
-		</div>
-	</div>
-</header>
+  <header>
+    <div id="homeFullScreen">
+      <div class="header-text wow fadeInDown animated-section">
+        <h1>Leonardo Costa</h1>
+        <div class="vertical-line"></div>
+        <p>Educação Profissionalizante | Informática | Design Gráfico | Tecnologias Aplicadas</p>
+      </div>
+    </div>
+  </header>
 
-<!-- Feature -->
-<section class="feature scroll-fade">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-12 wow fadeInLeftCustom animated-section">
-				<div class="feature-box">
-					<h1>Sobre</h1>
-					<p>Com mais de 3 anos de atuação na área de educação profissionalizante, contribuições para que estudantes e profissionais possam aprimorar suas habilidades técnicas.<br>Com foco em informática, ensino diariamente recursos do Pacote Office (principalmente Excel), Windows, Design Gráfico, Programação, Robótica, entre outros.</p>
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-12 nopadding wow fadeInRightCustom animated-section">
-				<img src="images/1.png">
-			</div>
-			<div class="clearfix"></div>
-			<div class="col-md-6 col-sm-12 nopadding wow fadeInLeftCustom animated-section">
-				<img src="images/1.png">
-			</div>
-			<div class="col-md-6 col-sm-12 wow fadeInRightCustom animated-section">
-				<div class="feature-box">
-					<h1>Lorem Ipsum</h1>
-					<p>Lorem Ipsum is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+  <!-- Feature -->
+  <section class="feature scroll-fade">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 col-sm-12 wow fadeInLeftCustom animated-section">
+          <div class="feature-box">
+            <h1>Sobre</h1>
+            <p>Com mais de 3 anos de atuação na área de educação profissionalizante, contribuições para que estudantes e profissionais possam aprimorar suas habilidades técnicas.<br>Com foco em informática, ensino diariamente recursos do Pacote Office (principalmente Excel), Windows, Design Gráfico, Programação, Robótica, entre outros.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 wow fadeInRightCustom animated-section">
+          <img src="images/VectorLogoLC_Gray.png" alt="Logo Gray">
+        </div>
 
-<!-- Portfolio -->
-<section class="portfolio scroll-fade">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 wow fadeInDown animated-section">
-				<h1 class="heading">Portfolio - Edits</h1>
-			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/m2wwFtD3/Art-Banner-Games.png">
-			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/9QjSdSKB/terno-masculino.png">
-			</div>
-			<div class="col-md-4 col-sm-6 last-img wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/pTjMBVVh/Flyer-training-campanha.png">
-			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/jdGYwbdD/Banner-lanche-natural.png">
-			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/prhQ4Whn/Arte-Doces.png">
-			</div>
-			<div class="col-md-4 col-sm-6 last-img wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/7hF1yF0t/Banner-lanche-lanchonete-1.png">
-			</div>
-		</div>
-	</div>
-</section>
+        <div class="col-md-6 col-sm-12 wow fadeInLeftCustom animated-section mt-4">
+          <img src="images/VectorLogoLC-Blue.png" alt="Logo Blue">
+        </div>
+        <div class="col-md-6 col-sm-12 wow fadeInRightCustom animated-section mt-4">
+          <div class="feature-box">
+            <h1>LOGO in Figma</h1>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Call to Action -->
-<section class="call-top-action text-center wow fadeIn animated-section scroll-fade">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h1>many variations of passages</h1>
-				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration 
-				<br />
-				in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-				<span>LOREM IPSUM</span>
-			</div>
-		</div>
-	</div>
-</section>
+  <!-- Portfolio -->
+  <section class="portfolio scroll-fade">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 wow fadeInDown animated-section text-center">
+          <h1 class="heading">Portfolio - Edits</h1>
+          <h2 class="ferraments">Ferramentas: Photoshop | Figma | Canva.</h2>
+        </div>
 
-<!-- Footer -->
-<footer class="wow fadeInUpCustom animated-section scroll-fade">
-	<ul class="in-line">
-		<li><a href="https://www.linkedin.com/in/leonardo-costa96/"><span><i class="fa fa-linkedin"></i></span></a></li>
-		<li><a href="https://www.instagram.com/leo.costt"><span><i class="fa fa-instagram"></i></span></a></li>
-		<li><a href="#"><span><i class="fa fa-github"></i></span></a></li>
-	</ul>
-	<span class="copyright">&#169; Untitled . All rights reserved. Design By <a href="http://templatestock.co">Templatestock.co</a></span>
-</footer>
+        <!-- Portfolio images -->
+        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUpCustom animated-section">
+          <img src="https://i.postimg.cc/m2wwFtD3/Art-Banner-Games.png" alt="">
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUpCustom animated-section">
+          <img src="https://i.postimg.cc/9QjSdSKB/terno-masculino.png" alt="">
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUpCustom animated-section">
+          <img src="https://i.postimg.cc/pTjMBVVh/Flyer-training-campanha.png" alt="">
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUpCustom animated-section">
+          <img src="https://i.postimg.cc/jdGYwbdD/Banner-lanche-natural.png" alt="">
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUpCustom animated-section">
+          <img src="https://i.postimg.cc/prhQ4Whn/Arte-Doces.png" alt="">
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUpCustom animated-section">
+          <img src="https://i.postimg.cc/7hF1yF0t/Banner-lanche-lanchonete-1.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Scripts -->
-<script type="text/javascript" src="js/jquery-main.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/wow.min.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<script>
-	$(document).ready(function() {
-		$('#homeFullScreen').css({height:$(window).height(),width:$(window).width()});
-		$(window).resize(function(){
-			$('#homeFullScreen').css({height:$(window).height(),width:$(window).width()});
-		});
+  <!-- Call to Action -->
+  <section class="call-top-action text-center wow fadeIn animated-section scroll-fade">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Contato</h1>
+          <p>Entre em contato para colaborações ou projetos criativos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		// WOW Animation
-		new WOW().init();
+  <!-- Footer -->
+  <footer class="wow fadeInUpCustom animated-section scroll-fade">
+    <ul class="in-line">
+      <li><a href="https://www.linkedin.com/in/leonardo-costa96/"><i class="fa fa-linkedin"></i></a></li>
+      <li><a href="https://www.instagram.com/leo.costt"><i class="fa fa-instagram"></i></a></li>
+      <li><a href="mailto:leonardo.cost96@gmail.com"><i class="fa fa-envelope"></i></a></li>
+    </ul>
+    <span class="copyright">&#169; Leonardo Costa. Todos os direitos reservados.</span>
+  </footer>
 
-		// Scroll Animation
-		function onScrollFade() {
-			$('.scroll-fade').each(function() {
-				const elTop = $(this).offset().top;
-				const scrollTop = $(window).scrollTop();
-				const windowHeight = $(window).height();
+  <!-- Scripts -->
+  <script src="js/jquery-main.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    $(document).ready(function () {
+      new WOW().init();
 
-				if (elTop < scrollTop + windowHeight - 100) {
-					$(this).addClass('in-view');
-				} else {
-					$(this).removeClass('in-view');
-				}
-			});
-		}
-		$(window).on('scroll resize', onScrollFade);
-		onScrollFade();
-	});
-</script>
+      function onScrollFade() {
+        $('.scroll-fade').each(function () {
+          const elTop = $(this).offset().top;
+          const elBottom = elTop + $(this).outerHeight();
+          const scrollTop = $(window).scrollTop();
+          const scrollBottom = scrollTop + $(window).height();
+
+          if (elBottom > scrollTop + 50 && elTop < scrollBottom - 50) {
+            $(this).addClass('in-view');
+          } else {
+            $(this).removeClass('in-view');
+          }
+        });
+      }
+
+      $(window).on('scroll resize', onScrollFade);
+      onScrollFade();
+    });
+  </script>
 </body>
 </html>
