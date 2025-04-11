@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ADICIONADO -->
 	<title>L.C. - Portfolio</title>
 
 	<!-- Bootstrap CSS -->
@@ -34,6 +36,8 @@
 		}
 		html, body {
 			scroll-behavior: smooth;
+			margin: 0;
+			padding: 0;
 		}
 		section {
 			position: relative;
@@ -48,12 +52,51 @@
 			opacity: 1;
 			transform: none;
 		}
-		@media (max-width: 767px) {
-			.feature-box p {
-				text-align: left !important;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		.header-text {
+			text-align: center;
+			padding: 20px;
+		}
+		.vertical-line {
+			width: 50px;
+			height: 4px;
+			background: #333;
+			margin: 10px auto;
+		}
+		footer {
+			text-align: center;
+			padding: 20px;
+		}
+		footer ul.in-line {
+			padding: 0;
+			margin: 0 0 10px 0;
+			list-style: none;
+		}
+		footer ul.in-line li {
+			display: inline-block;
+			margin: 0 10px;
+		}
+		@media (max-width: 768px) {
+			.header-text h1 {
+				font-size: 28px;
 			}
-			.feature-box h1 {
-				text-align: left !important;
+			.feature-box h1, .portfolio h1.heading, .ferraments {
+				text-align: center;
+				font-size: 20px;
+			}
+			.feature-box p {
+				text-align: justify;
+				font-size: 16px;
+			}
+			section.feature .row > div {
+				margin-bottom: 20px;
+				text-align: center;
+			}
+			.call-top-action p {
+				font-size: 18px;
 			}
 		}
 	</style>
@@ -77,20 +120,19 @@
 <section class="feature scroll-fade">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 wow fadeInLeftCustom animated-section">
+			<div class="col-md-6 col-sm-12 wow fadeInLeftCustom animated-section">
 				<div class="feature-box">
 					<h1>Sobre</h1>
 					<p>Com mais de 3 anos de atuação na área de educação profissionalizante, contribuições para que estudantes e profissionais possam aprimorar suas habilidades técnicas.<br>Com foco em informática, ensino diariamente recursos do Pacote Office (principalmente Excel), Windows, Design Gráfico, Programação, Robótica, entre outros.</p>
 				</div>
 			</div>
-			<div class="col-md-6 col-sm-6 nopadding wow fadeInRightCustom animated-section">
-				<img src="images/VectorLogoLC_Gray.png" class="img-fluid">
+			<div class="col-md-6 col-sm-12 wow fadeInRightCustom animated-section">
+				<img src="images/VectorLogoLC_Gray.png" alt="Logo Cinza">
 			</div>
-			<div class="clearfix"></div>
-			<div class="col-md-6 col-sm-6 nopadding wow fadeInLeftCustom animated-section">
-				<img src="images/VectorLogoLC-Blue.png" class="img-fluid">
+			<div class="col-md-6 col-sm-12 wow fadeInLeftCustom animated-section">
+				<img src="images/VectorLogoLC-Blue.png" alt="Logo Azul">
 			</div>
-			<div class="col-md-6 col-sm-6 wow fadeInRightCustom animated-section">
+			<div class="col-md-6 col-sm-12 wow fadeInRightCustom animated-section">
 				<div class="feature-box">
 					<h1>LOGO in Figma</h1>
 					<p></p>
@@ -108,23 +150,23 @@
 				<h1 class="heading">Portfolio - Edits</h1>
 				<h1 class="ferraments">Ferramentas: Photoshop | Figma | Canva.</h1>
 			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/m2wwFtD3/Art-Banner-Games.png" class="img-fluid">
+			<div class="col-sm-6 col-xs-12 col-md-4 wow fadeInUpCustom animated-section">
+				<img src="https://i.postimg.cc/m2wwFtD3/Art-Banner-Games.png" alt="Arte Games">
 			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/9QjSdSKB/terno-masculino.png" class="img-fluid">
+			<div class="col-sm-6 col-xs-12 col-md-4 wow fadeInUpCustom animated-section">
+				<img src="https://i.postimg.cc/9QjSdSKB/terno-masculino.png" alt="Terno Masculino">
 			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/pTjMBVVh/Flyer-training-campanha.png" class="img-fluid">
+			<div class="col-sm-6 col-xs-12 col-md-4 wow fadeInUpCustom animated-section">
+				<img src="https://i.postimg.cc/pTjMBVVh/Flyer-training-campanha.png" alt="Campanha">
 			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/jdGYwbdD/Banner-lanche-natural.png" class="img-fluid">
+			<div class="col-sm-6 col-xs-12 col-md-4 wow fadeInUpCustom animated-section">
+				<img src="https://i.postimg.cc/jdGYwbdD/Banner-lanche-natural.png" alt="Lanche Natural">
 			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/prhQ4Whn/Arte-Doces.png" class="img-fluid">
+			<div class="col-sm-6 col-xs-12 col-md-4 wow fadeInUpCustom animated-section">
+				<img src="https://i.postimg.cc/prhQ4Whn/Arte-Doces.png" alt="Doces">
 			</div>
-			<div class="col-md-4 col-sm-6 wow fadeInUpCustom animated-section">
-				<img src="https://i.postimg.cc/7hF1yF0t/Banner-lanche-lanchonete-1.png" class="img-fluid">
+			<div class="col-sm-6 col-xs-12 col-md-4 wow fadeInUpCustom animated-section">
+				<img src="https://i.postimg.cc/7hF1yF0t/Banner-lanche-lanchonete-1.png" alt="Lanchonete">
 			</div>
 		</div>
 	</div>
@@ -143,28 +185,13 @@
 </section>
 
 <!-- Footer -->
-<footer class="wow fadeInUpCustom animated-section scroll-fade text-center py-4 bg-dark text-white">
-	<ul class="list-inline mb-2">
-		<li class="list-inline-item">
-			<a href="https://www.linkedin.com/in/leonardo-costa96/" target="_blank">
-				<i class="fa fa-linkedin fa-2x text-white"></i>
-			</a>
-		</li>
-		<li class="list-inline-item">
-			<a href="https://www.instagram.com/leo.costt" target="_blank">
-				<i class="fa fa-instagram fa-2x text-white"></i>
-			</a>
-		</li>
-		<li class="list-inline-item">
-			<a href="mailto:leonardo.cost96@gmail.com">
-				<i class="fa fa-envelope fa-2x text-white"></i>
-			</a>
-		</li>
+<footer class="wow fadeInUpCustom animated-section scroll-fade">
+	<ul class="in-line">
+		<li><a href="https://www.linkedin.com/in/leonardo-costa96/"><span><i class="fa fa-linkedin"></i></span></a></li>
+		<li><a href="https://www.instagram.com/leo.costt"><span><i class="fa fa-instagram"></i></span></a></li>
+		<li><a href="mailto:leonardo.cost96@gmail.com"><span><i class="fa fa-envelope"></i></span></a></li>
 	</ul>
-	<p class="mb-0 small">
-		&copy; Untitled. All rights reserved. Design By 
-		<a href="http://templatestock.co" class="text-white">Templatestock.co</a>
-	</p>
+	<span class="copyright">&#169; Untitled . All rights reserved. Design By <a href="http://templatestock.co">Templatestock.co</a></span>
 </footer>
 
 <!-- Scripts -->
@@ -179,10 +206,8 @@
 			$('#homeFullScreen').css({height:$(window).height(),width:$(window).width()});
 		});
 
-		// WOW Animation
 		new WOW().init();
 
-		// Scroll Animation (Up & Down)
 		function onScrollFade() {
 			$('.scroll-fade').each(function() {
 				const elTop = $(this).offset().top;
