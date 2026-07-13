@@ -64,7 +64,47 @@
     transition:all .2s ease;
   }
   .tabs a:hover{color:var(--chalk); background:rgba(243,239,227,0.06);}
-  @media(max-width:640px){ .tabs{display:none;} }
+
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:36px; height:36px;
+    background:none; border:none; cursor:pointer;
+    padding:0;
+  }
+  .hamburger span{
+    width:22px; height:2px; background:var(--chalk);
+    transition:transform .25s ease, opacity .2s ease;
+  }
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    max-height:0;
+    overflow:hidden;
+    background:var(--chalkboard-dark);
+    border-bottom:1px solid var(--line);
+    transition:max-height .3s ease;
+  }
+  .mobile-menu.open{max-height:220px;}
+  .mobile-menu a{
+    padding:16px 32px;
+    font-family:'IBM Plex Mono', monospace; font-size:13px;
+    color:var(--sage);
+    border-top:1px solid var(--line);
+  }
+  .mobile-menu a:hover{color:var(--chalk);}
+
+  @media(max-width:768px){
+    .tabs{display:none;}
+    .hamburger{display:flex;}
+    .mobile-menu{display:flex;}
+  }
 
   /* ===== HERO — cabeçalho de planilha ===== */
   .hero{position:relative; z-index:1; padding:96px 0 72px;}
@@ -75,6 +115,9 @@
   }
   .colheaders{display:grid; grid-template-columns:repeat(8, 1fr); gap:0; margin-bottom:2px; padding-left:44px;}
   .colheaders span{padding:4px 0; text-align:center; border-left:1px solid var(--line);}
+  @media(max-width:767px){
+    .colheaders, .cellrow{display:none;}
+  }
   .a1cell{
     display:grid; grid-template-columns:1.15fr 0.85fr; gap:0; align-items:stretch;
     border:none;
@@ -149,9 +192,9 @@
 
     pointer-events:none;
   }
-  @media(max-width:760px){
+  @media(max-width:767px){
     .a1cell{grid-template-columns:1fr;}
-    .a1cell .photocol{min-height:220px;}
+    .a1cell .photocol{min-height:300px;}
   }
   .rowlabel{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--sage); padding-top:6px;}
   .hero h1{font-size:clamp(36px,6vw,58px); line-height:1.05; color:var(--chalk);}
@@ -215,23 +258,26 @@
     transition:all .3s ease;
   }
   .cell:hover .tag{opacity:1; transform:translateY(0);}
-  @media(max-width:760px){ .grid{grid-template-columns:repeat(2,1fr);} }
-  @media(max-width:480px){ .grid{grid-template-columns:1fr;} }
+  @media(max-width:1024px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:767px){ .grid{grid-template-columns:1fr;} }
 
   /* ===== CONTATO ===== */
   .contact{
-    padding:80px 0 100px;
+    padding:80px 32px 100px;
     border-top:1px solid var(--line);
   }
   .contact h2{font-size:clamp(28px,4vw,40px); margin-bottom:22px;}
   .contact-links{display:flex; flex-direction:column; gap:0; max-width:520px;}
   .contact-links a{
     display:flex; justify-content:space-between; align-items:center;
-    padding:16px 4px; border-bottom:1px solid var(--line);
+    padding:16px 12px; border-bottom:1px solid var(--line);
     font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--chalk);
     transition:color .2s ease;
   }
   .contact-links a:hover{color:var(--coral);}
+  .contact-links a .link-left{display:inline-flex; align-items:center; gap:12px;}
+  .contact-links a .link-left svg{width:18px; height:18px; color:var(--sage); flex:none; transition:color .2s ease;}
+  .contact-links a:hover .link-left svg{color:var(--coral);}
   .contact-links a .arrow{color:var(--sage); transition:transform .2s ease;}
   .contact-links a:hover .arrow{transform:translateX(4px); color:var(--coral);}
 
@@ -261,6 +307,14 @@
       <a href="#portfolio">Portfólio</a>
       <a href="#contato">Contato</a>
     </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre">Sobre</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#contato">Contato</a>
   </div>
 </nav>
 
@@ -331,9 +385,40 @@
   <p class="eyebrow">// Contato</p>
   <h2>Vamos conversar sobre<br>seu próximo projeto.</h2>
   <div class="contact-links">
-    <a href="https://www.linkedin.com/in/leonardo-costa96/" target="_blank" rel="noopener">LinkedIn <span class="arrow">→</span></a>
-    <a href="https://www.instagram.com/leo.costt" target="_blank" rel="noopener">Instagram <span class="arrow">→</span></a>
-    <a href="mailto:leonardo.cost96@gmail.com">leonardo.cost96@gmail.com <span class="arrow">→</span></a>
+    <a href="https://www.linkedin.com/in/leonardo-costa96/" target="_blank" rel="noopener">
+      <span class="link-left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="3"/>
+          <line x1="8" y1="11" x2="8" y2="16.5"/>
+          <circle cx="8" cy="7.5" r="0.9" fill="currentColor" stroke="none"/>
+          <path d="M12 16.5v-3.3c0-1.15.85-1.9 1.85-1.9s1.85.75 1.85 1.9v3.3"/>
+          <line x1="12" y1="11" x2="12" y2="16.5"/>
+        </svg>
+        LinkedIn
+      </span>
+      <span class="arrow">→</span>
+    </a>
+    <a href="https://www.instagram.com/leo.costt" target="_blank" rel="noopener">
+      <span class="link-left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.3" cy="6.7" r="0.7" fill="currentColor" stroke="none"/>
+        </svg>
+        Instagram
+      </span>
+      <span class="arrow">→</span>
+    </a>
+    <a href="mailto:leonardo.cost96@gmail.com">
+      <span class="link-left">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5" width="18" height="14" rx="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+        leonardo.cost96@gmail.com
+      </span>
+      <span class="arrow">→</span>
+    </a>
   </div>
 </section>
 
@@ -345,6 +430,21 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
   }, {threshold:0.12});
   els.forEach(el=>io.observe(el));
+
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburgerBtn.addEventListener('click', ()=>{
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburgerBtn.classList.toggle('open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+      mobileMenu.classList.remove('open');
+      hamburgerBtn.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
 </script>
 
 </body>
